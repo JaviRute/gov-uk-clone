@@ -26,7 +26,7 @@ const Header = (props) => {
                 </div>
                 {/* Here are the menu and search buttons, which are react components themselves */}
                     <div className='top-buttons'>
-                        <div className='lateral-line'></div>
+                        
                         <MenuButton menuIsOn={menuIsOn}
                                     handleSetMenuIsOnToTrue={handleSetMenuIsOnToTrue}
                                     handleSetMenuIsOnToFalse={handleSetMenuIsOnToFalse} />

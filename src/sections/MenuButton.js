@@ -16,9 +16,12 @@ const MenuButton = (props) => {
     //If the boolean is false the button will show like this (arrow down)
     } else {
         return (
-            <button onClick={handleSetMenuIsOnToTrue} className='menu-button-idle'>
+            <>
+                <div className='lateral-line'></div>
+                <button onClick={handleSetMenuIsOnToTrue} className='menu-button-idle'>
                 <span><i class="fa-sharp fa-solid fa-chevron-down"></i>Menu</span>
             </button>
+            </>
         )
     }
 };

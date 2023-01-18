@@ -1,38 +1,1193 @@
-.App {
-  text-align: center;
+/*-----------------------------------------------------------------*/
+/*-----------------------COLORS USED-------------------------------*/
+/*-----------------------------------------------------------------
+
+light blue (search button when hovered): 1d7ecf
+main blue (several areas, many of the links): 1d6fb8
+dark blue (whenever you click on some of the light blue items): 013173
+grey (several sections): f3f2f0
+dark grey (several buttons when hovered): b0b4b7
+green (used with several buttons): 00723e
+dark green (several buttons when hovered): 015933
+yellow (whenever you click on a link): #fedc00
+
+
+---------------------------GENERAL---------------------------------*/
+/*-----------------------------------------------------------------*/
+/*------------This applies to the whole page-----------------------*/
+
+/*This is to avoid unwanted white spaces on top*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  /*I am not meant to be using the real font that is used on the page (GDS Transport), so I am using arial instead*/
+  font-family: arial,sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/*---------------------------------COOKIES------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+/*-This section will not appear after either button accept/reject has been pressed--*/
+
+.cookies-section {
+  width: 50vw;
+  padding: 30px 40vw 30px 25vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cookies-section h2 {
+  padding-bottom: 10px;
+}
+
+.cookies-section p { 
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+.cookies-choices {
+  display: flex;
+  gap: 20px;
+}
+
+.cookies-choices button {
+  background-color: #00723e;
+  color: white;
+  border: none;
+  border-bottom: 2px black solid;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+
+}
+
+.cookies-choices button:hover{
+  background-color: #015933;
+}
+
+.cookies-choices p:hover{
+  color: #013173;
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+  .cookies-section {
+    width: 80vw;
+    padding: 30px 10vw 30px 10vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (max-width: 700px) {
+  .cookies-section {
+    width: 90vw;
+    padding: 30px 5vw 30px 5vw;
+  }
+}
+
+
+/*-----------------------------HEADER------------------------------*/
+/*-----------------------------------------------------------------*/
+/*----------------------Black header at the top--------------------*/
+
+
+/*Black header*/
+.top-header {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 50vw;
+  padding: 0 25vw;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-header-text {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.top-header-text :hover {
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.top-header img {
+  width: 40px;
+  padding-right: 6px;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+}
+
+.search-button{
+  background-color: #1d6fb8;
+  color: white;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+
+.search-button :hover {
+  background-color: black;
+  color: #f3f2f0;
+  border-bottom: 2px #f3f2f0 solid;
+  cursor: pointer;
+  margin-top: -2px;
+}
+
+.top-buttons i{
+  padding: 7px;
+  width: 25px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.top-buttons .search{
+  background-color: #1d6fb8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.lateral-line {
+  background-color: #b0b4b7;
+  height: 60%;
+  width: 1px;
+  padding: auto 0;
+  margin: auto 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .top-header {
+    width: 80vw;
+    padding: 0 10vw 0 10vw;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 700px) {
+  .top-header {
+    width: 90vw;
+    padding: 0 5vw 0 5vw;
+  }
+}
+
+/*---------------------------MENU BUTTON---------------------------*/
+/*-----------------------------------------------------------------*/
+/*-------------------Inside the Header, at the top-----------------*/
+
+/* Menu Button when showing Menu */
+
+.menu-button-pressed {
+  background-color: #f3f2f0;
+  color: #1d6fb8;
+  font-size: 1rem;
+  padding: 10px;
+  border-bottom: 3px #1d6fb8 solid;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-button-pressed i {
+  color: #1d6fb8;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Menu Button when not showing Menu */
+
+.menu-button-idle {
+  background-color: black;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.menu-button-idle i {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.menu-button-idle button {
+  border: none;
+  text-decoration: none;
+  background-color: black;
+}
+
+.menu-button-idle span {
+  padding-bottom: 13px;
+}
+
+.menu-button-idle :hover {
+  color: #b0b4b7;
+  border-bottom: 3px #b0b4b7 solid;
+  cursor: pointer;
+}
+
+.menu-button-idle span :hover{
+  color: #f3f2f0;
+  border-bottom: none;
+}
+
+/*-------------------------SEARCH BUTTON---------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----Just the search button inside the black header on top-------*/
+
+.search-button-idle {
+  background-color: #1d7ecf;
+  font-size: 1.3rem;
+}
+
+.search-button-idle:hover{
+  background-color: black;
+  cursor: pointer;
+  border-bottom: 3px solid #b0b4b7;
+}
+
+.search-button-pressed {
+  background-color: #f3f2f0;
+  font-size: 1.6rem;
+}
+
+.search-button-pressed i {
+  color: black;
+}
+
+.search-button-pressed:hover{
+  cursor: pointer;
+}
+
+
+/*-----------------------SEARCH SECTION----------------------------*/
+/*-----------------------------------------------------------------*/
+/*--This section is activated when pressing the 'search' button----*/
+
+.search-section {
+  background-color: #f3f2f0;
+  width: 50vw;
+  padding: 30px 25vw;
+}
+
+.search-top-div {
+  padding: 10px 0 30px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.search-top-div input {
+  width: 100%;
+  height: 40px;
+  font-size: 1.3rem;
+  border: 2px solid black;
+  border-right: none;
+  border-radius: 0;
+  padding: 1px;
+}
+
+.search-top-div input:focus {
+  border: 3px #fedc00 solid;
+  padding: 0;
+}
+
+.search-top-div i {
+  background-color: #1d6fb8;
+  color: #f3f2f0;
+  font-size: 1.3rem;
+  height: 46px;
+  width: 46px;
+  line-height: 46px;
+  text-align: center;
+  text-justify: distribute;
+}
+
+.search-top-div i:hover {
+  cursor: pointer;
+  background-color: #1d7ecf;
+}
+
+.popular-div-section {
+  padding: 10px 0;
+}
+
+.popular-div-section h2 {
+  padding: 10px 0;
+}
+
+.popular-div-section li {
+  padding: 10px 0;
+  list-style: none;
+}
+
+.popular-div-section a:hover {
+  color: #013173;
+  text-emphasis: underline;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .search-section {
+    width: 80vw;
+    padding: 30px 10vw 3vw 10vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .search-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+  }
+}
+
+
+/*-----------------------------WELCOME-----------------------------*/
+/*-----------------------------------------------------------------*/
+/*-------------------Blue section under the header-----------------*/
+
+.welcome-section {
+  background-color: #1d6fb8;
+  color: white;
+  width: 50vw;
+  padding: 60px 25vw;
+  margin: 0 auto;
+}
+
+.welcome-section h1 {
+  font-size: 48px;
+  padding-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-section {
+    width: 80vw;
+    padding: 30px 10vw 3vw 10vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .welcome-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+  }
+}
+
+/*-------------------------POPULAR---------------------------------*/
+/*-----------------------------------------------------------------*/
+/*----------------Grey section with search bar---------------------*/
+
+
+.popular-section {
+  width: 50vw;
+  padding: 0 25vw;
+  background-color: #f3f2f0;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.popular-links {
+  padding: 0 50px 60px 0;
+}
+
+.popular-links li:hover {
+  color: #013173;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+.popular-links li {
+  list-style: none;
+  padding-top: 15px;
+  text-decoration: underline;
+  color: #1d6fb8;
+}
+
+.popular-search {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column
+}
+
+.popular-search h2 {
+  margin-bottom: 15px;
+}
+
+.search-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.popular-search input{
+  width: 350px;
+  height: 30px;
+  border: 3px black solid;
+  border-right: none;
+  font-size: 1.5rem;
+}
+
+.search-div input:focus {
+  border: 3px #fedc00 solid;
+  border-right: none;
+}
+
+.popular-search i{
+  font-size: 1.4rem;
+  color: white;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  background-color: #1d6fb8;
+  padding: auto;
+  text-align: center;
+}
+
+.popular-search i:hover {
+  background-color: #1d7ecf;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .popular-section {
+    width: 80vw;
+    padding: 30px 10vw 3vw 10vw;
+  }
+
+  .popular-div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .popular-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+  }
+  .popular-div {
+    grid-template-columns: 1fr;
+  }
+  .popular-search input{
+    width: 80%;
+  }
+}
+
+/*---------------------------TOPICS--------------------------------*/
+/*-----------------------------------------------------------------*/
+/*----------------------Grid with topics---------------------------*/
+
+.topics-section {
+  width: 50vw;
+  padding: 0 25vw 3vw 25vw;
+}
+
+.topics-section h2 {
+  margin: 30px 0;
+}
+
+.topics-section i {
+  margin: 20px 0;
+}
+
+.flex-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topics-div {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 1200px) {
+  .topics-section {
+    width: 80vw;
+    padding: 30px 10vw 3vw 10vw;
+  }
+
+  .topics-div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topics-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+  }
+  .topics-div {
+    grid-template-columns: 1fr;
+  }
+}
+
+.topics-div h3{
+  font-size: 1.3rem;
+  padding: 10px 0;
+  color: #1d6fb8;
+  text-decoration-line: underline;
+}
+
+.topic {
+  border-top: 1px black solid;
+  text-decoration-thickness: 1px;
+}
+
+.topic :hover{
+  color:#013173;
+  text-decoration-thickness: 3px;
+}
+
+.topics-div p{
+  font-size: 1.2rem;
+  color: black;
+}
+
+.topic-p {
+  text-decoration: none;
+}
+
+.topics-div a, u {
+  text-decoration: none;
+}
+
+/*-------------------GOVERNMENT ACTIVITY---------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------Around middle of the page-----------------------*/
+
+.government-activity-section i {
+  margin: 20px 0;
+}
+
+.government-activity-section a {
+  text-decoration: none;
+}
+
+.government-activity-section {
+  width: 50vw;
+  padding: 0 25vw;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 30px 0 60px 0;
+  gap: 30px;
+}
+
+.government-activity-section h2 {
+  border-top: 3px black solid;
+  padding: 20px 20px 0 0;
+}
+
+.gov-act-div {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 1200px) {
+  .government-activity-section {
+    width: 80vw;
+    padding: 30px 10vw 3vw 10vw;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .government-activity-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+    margin: 0;
+  }
+  .gov-act-div {
+    grid-template-columns: 1fr;
+  }
+}
+
+.government-activity-section p {
+  font-size: 1.5rem;
+}
+
+.gov-act-div h3 {
+  font-size: 1.3rem;
+  padding: 10px 0;
+  color: #1d6fb8;
+  text-decoration-line: underline;
+}
+
+.gob-p {
+  padding: 0 0 20px 0;
+}
+
+.gov-act-div p {
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.departments-organisations {
+  margin-top: 100px 0;
+  color: #1d6fb8;
+}
+
+#right-part #departments-organisations a {
+  color: #013173;
+}
+
+.big-number {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #1d6fb8;
+  line-height: 1;
+}
+
+.big-number-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration-line: underline;
+  color: #1d6fb8;
+}
+
+.departments-organisations a :hover{
+  color: #013173;
+
+}
+
+/*--------------------------FEATURED-------------------------------*/
+/*-----------------------------------------------------------------*/
+/*---------------The section with the three images-----------------*/
+
+.featured-section {
+  border-top: 3px black solid;
+  width: 50vw;
+  margin: 0 25vw;
+  padding: 0 0 40px 0;
+}
+
+.featured-section h2 {
+  padding: 20px 0 30px 0;
+}
+
+.featured-div {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+.featured-div div {
+  width: 15vw;
+}
+
+.featured-div img {
+  width: 15vw;
+  height: auto;
+  border-top: 1px black solid;
+}
+
+.featured-div h3{
+  font-size: 1.4rem;
+  padding: 10px 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  color: #1d6fb8;
+}
+
+.featured-div h3:hover{
+  color: #013173;
+  text-decoration-thickness: 3px;
+}
+
+.featured-div p {
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .featured-section {
+    width: 80vw;
+    margin: 0 10vw 40px 10vw;
+    padding: 0 0 40px 0;
+  }
+  .featured-div {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .featured-div div {
+    width: 25vw;
+  }
+  .featured-div img {
+    width: 25vw;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .featured-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+    margin: 0;
+  }
+  .featured-div {
+    flex-direction: column;
+  }
+
+  .featured-div div {
+    width: 60vw;
+  }
+  .featured-div img {
+    width: 60vw;
+  }
+
+}
+
+/*-----------------------MORE ON GOV.UK----------------------------*/
+/*-----------------------------------------------------------------*/
+/*------------------Small section near the bottom------------------*/
+
+.more-section {
+  border-top: 3px black solid;
+  width: 50vw;
+  margin: 0 25vw;
+  padding: 0 0 50px 0;
+}
+
+.more-section h2 {
+  padding: 20px 0 20px 0;
+}
+
+.more-div {
+  width: 70%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.1rem;
+}
+
+.more-div p{
+  color: #1d6fb8;
+  text-decoration: underline;
+}
+
+.more-div p:hover{
+  color: #013173;
+  text-decoration-thickness: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+  .more-section {
+    width: 80vw;
+    margin: 0 10vw 40px 10vw;
+    padding: 0 0 40px 0;
+  }
+  .more-div {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .more-section {
+    width: 90vw;
+    padding: 30px 5vw 3vw 5vw;
+    margin: 0;
+  }
+  .more-div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*------------------------PAGE USEFUL------------------------------*/
+/*-----------------------------------------------------------------*/
+/*--------Section which asks whether the page was useful-----------*/
+
+.page-useful-section {
+  border-top: 1px black solid;
+  background-color: #f3f2f0;
+  width: 50vw;
+  margin: 0 25vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-useful-left {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+}
+
+.page-useful-right {
+  height: 40px;
+}
+
+.page-useful-right a {
+  color: black;
+  text-decoration: none;
+}
+
+.page-useful-section h4 {
+  margin: 20px 5px 5px 10px;
+}
+
+.page-useful-section button {
+  min-width: 100px;
+  height: 100%;
+  margin: auto;
+  font-size: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  border: 1px black solid;
+  border-bottom: 4px black solid;
+  margin: 5px;
+}
+
+.page-useful-section button:hover {
+  background-color: #b0b4b7;
+}
+
+@media screen and (max-width: 1200px) {
+  .page-useful-section {
+    width: 80vw;
+    margin: 0 10vw 40px 10vw;
+    padding: 0 30px 40px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page-useful-section {
+    width: 100vw;
+    margin: 10px 30px 0 0;
+    padding-left: 10px;
+    justify-content: space-around;
+  }
+  .page-useful-section h4 {
+    margin: 5px;
+  }
+}
+
+
+/*---------------------REPORT A PROBLEM----------------------------*/
+/*-----------------------------------------------------------------*/
+/*---This section only shows when you click on 'Report a problem'--*/
+
+
+.report-problem {
+  width: 50vw;
+  margin: 0 25vw;
+  border-top: 1px black solid;
+}
+
+.report-problem  h2{
+  padding: 30px 0;
+}
+
+.report-problem  p{
+  padding: 0 0 30px 0;
+  font-size: 1.1rem;
+}
+
+.report-problem-container {
+  width: 60%;
+}
+
+.report-input {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  gap: 10px;
+}
+
+.report-input textarea {
+  margin: 0 0 30px 0;
+  font-size: 1.1rem;
+  border: 2px black solid;
+}
+
+.report-input textarea:focus {
+  border: 1px black solid;
+  border: 3px #fedc00 solid;
+}
+.send-button {
+  background-color: #00723e;
+  color: white;
+  border: none;
+  border-bottom: 2px black solid;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 40px;
+  width: 70px;
+  margin: 0 20px 30px 0
+}
+
+.send-button:hover {
+  background-color: #015933;
+
+}
+
+.cancel-button {
+  background-color: #f3f2f0;
+  border: none;
+  border-bottom: 2px black solid;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 40px;
+  width: 70px;
+  margin: 0 20px 30px 0
+}
+
+.cancel-button:hover {
+  background-color: #b0b4b7;
+}
+
+@media screen and (max-width: 1200px) {
+  .report-problem {
+    width: 80vw;
+    margin: 0 10vw 40px 10vw;
+  }
+
+  .report-problem-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .report-problem {
+    width: 90vw;
+    margin: 0 5vw 40px 5vw;
+  }
+}
+
+/*-------------------------BLUE LINE-------------------------------*/
+/*-----------------------------------------------------------------*/
+/*---------This is just a blue line between two sections-----------*/
+
+.blue-line {
+  width: 100%;
+  height: 10px;
+  background-color: #1d6fb8;
+}
+
+/*------------------------SUMMARY BOTTOM----------------------------*/
+/*-A small section containing both the Topics and the Gov Activity--*/
+/*-This same section will also appear on top if you click on 'menu'-*/
+
+.summary-bottom-section {
+  width: 50vw;
+  padding: 0 25vw 50px 25vw;
+  background-color: #f3f2f0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.summary-bottom-section a {
+  color: black;
+  text-decoration-color: black;
+}
+
+.summary-bottom-section h2 {
+  padding:  30px 0 20px 0;
+}
+
+.bottom-topics {
+  border-top: 1px black solid;
+  padding-top: 25px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 6vw;
+}
+
+.bottom-gov-activity {
+  border-top: 1px black solid;
+  padding-top: 25px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-bottom-section a:hover {
+  text-decoration-thickness: 2px;
+  text-decoration-color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .summary-bottom-section {
+    width: 80vw;
+    padding: 0 10vw 40px 10vw;
+  }
+
+  .bottom-topics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .summary-bottom-section {
+    width: 90vw;
+    padding: 0 5vw 40px 5vw;
+  }
+}
+
+/*---------------------------FOOTER--------------------------------*/
+/*-----------------------------------------------------------------*/
+/*----------------------At the very bottom-------------------------*/
+
+.footer-section {
+  width: 50vw;
+  padding: 30px 25vw 30px 25vw;
+  background-color: #f3f2f0;
+}
+
+.footer {
+  padding-right: 70px;
+}
+
+.footer-container {
+  border-top: 1px black solid;
+  padding: 40px 0 30px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+.footer-container p {
+  font-size: 1rem;
+}
+
+
+.footer-section a {
+  list-style: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.footer-section a:hover {
+  text-decoration-thickness: 3px;
+  text-decoration-color: black;
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+
+.footer-copyright p {
+  padding: 2px 0 0 5px;
+}
+
+.footer-lions {
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer-section {
+    width: 80vw;
+    padding: 30px 10vw 30px 10vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer-section {
+    width: 90vw;
+    padding: 30px 5vw 30px 5vw;
+  }
+
+  .footer-copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-copyright p {
+    padding: 10px 0 10px 5px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*-----------------------------------------------------------------*/
+/*----------------------LINK TO THE REAL PAGE----------------------*/
+/*-----------------------------------------------------------------*/
+
+.link-to-real-page {
+  width: 50vw;
+  padding: 50px 25vw;
+  font-style: dosis;
+
+  z-index:1;
+  background: linear-gradient(-45deg, #013173, #00723e, #b0b4b7, #1d6fb8);
+  background-size: 400% 400%;
+  width: 100%;
+  height: 40px;
+  animation: animate 5s ease infinite;
+}
+
+@keyframes animate {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+.link-to-real-page h2{
+  font-family: dosis;
+}
+
+.link-to-real-page a{
+  font-family: dosis;
+}
+
+@media screen and (max-width: 1200px) {
+  .link-to-real-page {
+    width: 80vw;
+    padding: 50px 10vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .link-to-real-page {
+    width: 90vw;
+  padding: 50px 5vw;
   }
 }

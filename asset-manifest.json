@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/gov-uk-clone/static/css/main.10ac9327.css",
+    "main.js": "/gov-uk-clone/static/js/main.90dc96ff.js",
+    "static/js/787.02f1e8df.chunk.js": "/gov-uk-clone/static/js/787.02f1e8df.chunk.js",
+    "static/media/featured3.png": "/gov-uk-clone/static/media/featured3.37287a1bb9fe34b074ed.png",
+    "static/media/lions.png": "/gov-uk-clone/static/media/lions.20300bbaa1dca3962937.png",
+    "static/media/featured2.png": "/gov-uk-clone/static/media/featured2.066a635f1fea73229d14.png",
+    "index.html": "/gov-uk-clone/index.html",
+    "main.10ac9327.css.map": "/gov-uk-clone/static/css/main.10ac9327.css.map",
+    "main.90dc96ff.js.map": "/gov-uk-clone/static/js/main.90dc96ff.js.map",
+    "787.02f1e8df.chunk.js.map": "/gov-uk-clone/static/js/787.02f1e8df.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10ac9327.css",
+    "static/js/main.90dc96ff.js"
+  ]
+}
